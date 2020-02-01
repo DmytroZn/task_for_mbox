@@ -1,11 +1,9 @@
 # 1.1 Считать с файла mbox.txt письма и вывести их в консоль в формате:
 # from (date): subject
-r = sum(1 for line in open('mbox.txt', 'r'))
-print(r)
+
 with open('mbox.txt', 'r') as f:
     list_of_f_from = []
-    for i in range(r):
-        f_str = f.readline()
+    for f_str in f.readlines():
         if 'Date: ' in f_str:
             f_date = f_str.split('Date: ')[1][:-1]
         elif 'From: ' in f_str:
